@@ -8,7 +8,6 @@
 
 'use strict';
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {
     requireNativeComponent,
     View,
@@ -19,55 +18,10 @@ import {
 } from 'react-native';
 
 import ReactNativeBlobUtil from 'react-native-blob-util'
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 const SHA1 = require('crypto-js/sha1');
 import PdfView from './PdfView';
 
 export default class Pdf extends Component {
-
-    static propTypes = {
-        ...ViewPropTypes,
-        source: PropTypes.oneOfType([
-            PropTypes.shape({
-                uri: PropTypes.string,
-                cache: PropTypes.bool,
-                cacheFileName: PropTypes.string,
-                expiration: PropTypes.number,
-            }),
-            // Opaque type returned by require('./test.pdf')
-            PropTypes.number,
-        ]).isRequired,
-        page: PropTypes.number,
-        scale: PropTypes.number,
-        minScale: PropTypes.number,
-        maxScale: PropTypes.number,
-        horizontal: PropTypes.bool,
-        spacing: PropTypes.number,
-        password: PropTypes.string,
-        renderActivityIndicator: PropTypes.func,
-        enableAntialiasing: PropTypes.bool,
-        enableAnnotationRendering: PropTypes.bool,
-        enablePaging: PropTypes.bool,
-        enableRTL: PropTypes.bool,
-        fitPolicy: PropTypes.number,
-        trustAllCerts: PropTypes.bool,
-        singlePage: PropTypes.bool,
-        onLoadComplete: PropTypes.func,
-        onPageChanged: PropTypes.func,
-        onError: PropTypes.func,
-        onPageSingleTap: PropTypes.func,
-        onScaleChanged: PropTypes.func,
-        onPressLink: PropTypes.func,
-
-        // Props that are not available in the earlier react native version, added to prevent crashed on android
-        accessibilityLabel: PropTypes.string,
-        importantForAccessibility: PropTypes.string,
-        renderToHardwareTextureAndroid: PropTypes.string,
-        testID: PropTypes.string,
-        onLayout: PropTypes.bool,
-        accessibilityLiveRegion: PropTypes.string,
-        accessibilityComponentType: PropTypes.string,
-    };
 
     static defaultProps = {
         password: "",

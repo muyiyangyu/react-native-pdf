@@ -9,8 +9,6 @@
 'use strict';
 import React, {Component} from 'react';
 import {ScrollView, FlatList, View, StyleSheet} from 'react-native';
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
-import PropTypes from 'prop-types';
 
 import PdfManager from './PdfManager';
 import PdfPageView from './PdfPageView';
@@ -24,23 +22,6 @@ const MAX_SCALE = 3;
 const VIEWABILITYCONFIG = {minimumViewTime: 500, itemVisiblePercentThreshold: 10, waitForInteraction: false};
 
 export default class PdfView extends Component {
-
-    static propTypes = {
-        ...ViewPropTypes,
-        path: PropTypes.string,
-        password: PropTypes.string,
-        scale: PropTypes.number,
-        minScale: PropTypes.number,
-        maxScale: PropTypes.number,
-        spacing: PropTypes.number,
-        fitPolicy: PropTypes.number,
-        horizontal: PropTypes.bool,
-        page: PropTypes.number,
-        currentPage: PropTypes.number,
-        singlePage: PropTypes.bool,
-        onPageSingleTap: PropTypes.func,
-        onScaleChanged: PropTypes.func,
-    };
 
     static defaultProps = {
         path: "",

@@ -9,11 +9,10 @@
 
 'use strict';
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import {
     requireNativeComponent,
 } from 'react-native';
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+
 export default class PdfPageView extends PureComponent {
     _getStylePropsProps = () => {
         const {width, height} = this.props;
@@ -37,14 +36,6 @@ export default class PdfPageView extends PureComponent {
 
     }
 }
-
-PdfPageView.propTypes = {
-    ...ViewPropTypes,
-    fileNo: PropTypes.number,
-    page: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number
-};
 
 PdfPageView.defaultProps = {
     style: {}

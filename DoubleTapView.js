@@ -12,17 +12,8 @@ import {
     View,
     PanResponder
 } from 'react-native';
-import PropTypes from 'prop-types';
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
-export default class DoubleTapView extends Component {
 
-    static propTypes = {
-        ...ViewPropTypes,
-        delay: PropTypes.number,
-        radius: PropTypes.number,
-        onSingleTap: PropTypes.func,
-        onDoubleTap: PropTypes.func,
-    };
+export default class DoubleTapView extends Component {
 
     static defaultProps = {
         delay: 300,
@@ -73,7 +64,7 @@ export default class DoubleTapView extends Component {
 
         const currentTouchTimeStamp = Date.now();
         const x = evt.nativeEvent.locationX;
-        const y = evt.nativeEvent.locationY; 
+        const y = evt.nativeEvent.locationY;
 
         if (this.timer) {
 
